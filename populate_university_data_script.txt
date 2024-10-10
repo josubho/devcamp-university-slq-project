@@ -1,0 +1,114 @@
+-- DATOS PARA RELLENAR LA TABLA STUDENTS
+
+USE university_schema;
+
+INSERT INTO student(student_name)
+VALUE ("Kris Kros");
+
+INSERT INTO student(student_name)
+VALUE ("Matias Lopez");
+
+INSERT INTO student(student_name)
+VALUE ("Raul Gonzalez");
+
+INSERT INTO student(student_name)
+VALUE ("Cristiano Mesi");
+
+INSERT INTO student(student_name)
+VALUE ("Alberto Zapata");
+
+
+
+
+-- DATOS PARA RELLENAR LA TABLA COURSES
+
+USE university_schema;
+
+INSERT INTO courses(course_subject)
+VALUE ("Python");
+
+INSERT INTO courses(course_subject)
+VALUE ("Javascript");
+
+INSERT INTO courses(course_subject)
+VALUE ("React");
+
+INSERT INTO courses(course_subject)
+VALUE ("SCSS");
+
+INSERT INTO courses(course_subject)
+VALUE ("Angular");
+
+
+
+
+
+-- DATOS PARA RELLENAR LA TABLA PROFESSORS
+
+USE university_schema;
+
+INSERT INTO professors(professor_name)
+VALUE ("Francisco Campos");
+
+INSERT INTO professors(professor_name)
+VALUE ("Alberto Rodrigo");
+
+INSERT INTO professors(professor_name)
+VALUE ("Gustavo Rafael");
+
+
+
+
+
+-- DATOS PARA RELLENAR LA TABLA GRADES
+
+USE university_schema;
+
+INSERT INTO grades(grades_course_id, grades_student_id, grades_professor_id, grades_values)
+VALUES (3, 2, 1, 7 );
+
+INSERT INTO grades(grades_course_id, grades_student_id, grades_professor_id, grades_values)
+VALUES (1, 3, 2, 10);
+
+INSERT INTO grades(grades_course_id, grades_student_id, grades_professor_id, grades_values)
+VALUES (2, 1, 1, 6);
+
+INSERT INTO grades(grades_course_id, grades_student_id, grades_professor_id, grades_values)
+VALUES (4, 3, 2, 6);
+
+INSERT INTO grades(grades_course_id, grades_student_id, grades_professor_id, grades_values)
+VALUES (4, 5, 3, 4);
+
+INSERT INTO grades(grades_course_id, grades_student_id, grades_professor_id, grades_values)
+VALUES (3, 2, 2, NULL);
+
+INSERT INTO grades(grades_course_id, grades_student_id, grades_professor_id, grades_values)
+VALUES (5, 5, 1, NULL);
+
+INSERT INTO grades(grades_course_id, grades_student_id, grades_professor_id, grades_values)
+VALUES (1, 1, 1, 10);
+
+INSERT INTO grades(grades_course_id, grades_student_id, grades_professor_id, grades_values)
+VALUES (2, 2, 2, 1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
