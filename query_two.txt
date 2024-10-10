@@ -1,0 +1,8 @@
+USE university_schema;
+
+SELECT MAX(g.grades_values) AS "Top grades", g.grades_student_id as "ID", s.student_name AS "Student Name"
+FROM grades g
+JOIN students s
+ON g.grades_student_id = s.student_id
+GROUP BY g.grades_student_id
+ORDER BY MAX(g.grades_values) DESC;
