@@ -1,0 +1,15 @@
+USE univertity_schema;
+
+SELECT 
+-- g.grades_professor_id,
+-- g.grades_student_id,
+s.student_name AS "Student Name",
+p.professor_name AS "Professor Name",
+COUNT(*) AS "Number of Common Courses"
+FROM grades g
+JOIN students s
+ON g.grades_student_id = s.student_id
+JOIN professors p
+ON g.grades_professor_id = p.professor_id
+GROUP BY g.grades_professor_id, g.grades_student_id
+ORDER BY 3 DESC LIMIT 1
