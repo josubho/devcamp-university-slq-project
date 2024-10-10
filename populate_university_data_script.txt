@@ -91,6 +91,9 @@ VALUES (1, 1, 1, 10);
 INSERT INTO grades(grades_course_id, grades_student_id, grades_professor_id, grades_values)
 VALUES (2, 2, 2, 1);
 
+INSERT INTO grades(grades_course_id, grades_student_id, grades_professor_id, grades_values)
+VALUES (1, 1, 1, 5);
+
 
 
 
