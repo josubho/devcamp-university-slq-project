@@ -1,20 +1,75 @@
+-- CREAMOS LA BASE DE DATOS
+
+CREATE SCHEMA `university_schema`;
+
+
+-- CREAMOS LAS TABLAS
+
+CREATE TABLE `university_schema`.`students` (
+  `student_id` INT NOT NULL AUTO_INCREMENT,
+  `student_name` VARCHAR(45) NULL,
+  PRIMARY KEY (`student_id`),
+  UNIQUE INDEX `student_id_UNIQUE` (`student_id` ASC) VISIBLE);
+
+CREATE TABLE `university_schema`.`professors` (
+  `professor_id` INT NOT NULL AUTO_INCREMENT,
+  `professor_name` VARCHAR(45) NULL,
+  PRIMARY KEY (`professor_id`),
+  UNIQUE INDEX `professor_id_UNIQUE` (`professor_id` ASC) VISIBLE);
+
+CREATE TABLE `university_schema`.`courses` (
+  `course_id` INT NOT NULL AUTO_INCREMENT,
+  `course_subject` VARCHAR(45) NULL,
+  PRIMARY KEY (`course_id`),
+  UNIQUE INDEX `course_id_UNIQUE` (`course_id` ASC) VISIBLE);
+
+CREATE TABLE `university_schema`.`grades` (
+  `grades_id` INT NOT NULL AUTO_INCREMENT,
+  `grades_student_id` INT NULL,
+  `grades_professor_id` INT NULL,
+  `grades_course_id` INT NULL,
+  PRIMARY KEY (`grades_id`),
+  UNIQUE INDEX `grades_id_UNIQUE` (`grades_id` ASC) VISIBLE,
+  INDEX `grades_student_id_idx` (`grades_student_id` ASC) VISIBLE,
+  INDEX `grades_course_id_idx` (`grades_course_id` ASC) VISIBLE,
+  INDEX `grades_professor_id_idx` (`grades_professor_id` ASC) VISIBLE,
+  CONSTRAINT `grades_student_id`
+    FOREIGN KEY (`grades_student_id`)
+    REFERENCES `university_schema`.`students` (`student_id`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION,
+  CONSTRAINT `grades_professor_id`
+    FOREIGN KEY (`grades_professor_id`)
+    REFERENCES `university_schema`.`professors` (`professor_id`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION,
+  CONSTRAINT `grades_course_id`
+    FOREIGN KEY (`grades_course_id`)
+    REFERENCES `university_schema`.`courses` (`course_id`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION);
+    
+ALTER TABLE `university_schema`.`grades` 
+ADD COLUMN `grades_values` INT NULL AFTER `grades_course_id`;
+
+
 -- DATOS PARA RELLENAR LA TABLA STUDENTS
 
 USE university_schema;
 
-INSERT INTO student(student_name)
+INSERT INTO students(student_name)
 VALUE ("Kris Kros");
 
-INSERT INTO student(student_name)
+INSERT INTO students(student_name)
 VALUE ("Matias Lopez");
 
-INSERT INTO student(student_name)
+INSERT INTO students(student_name)
 VALUE ("Raul Gonzalez");
 
-INSERT INTO student(student_name)
+INSERT INTO students(student_name)
 VALUE ("Cristiano Mesi");
 
-INSERT INTO student(student_name)
+INSERT INTO students(student_name)
 VALUE ("Alberto Zapata");
 
 
