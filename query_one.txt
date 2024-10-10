@@ -1,0 +1,9 @@
+USE university_schema;
+
+SELECT g.grades_professor_id, AVG(g.grades_values) as "avg", p.professor_name AS "name"
+FROM grades g
+JOIN professors p
+ON g.grades_professor_id = p.professor_id
+WHERE grades_values IS NOT NULL
+GROUP BY grades_professor_id
+ORDER BY avg DESC;
