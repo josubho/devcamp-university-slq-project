@@ -1,8 +1,6 @@
 USE univertity_schema;
 
 SELECT 
--- g.grades_professor_id,
--- g.grades_student_id,
 s.student_name AS "Student Name",
 p.professor_name AS "Professor Name",
 COUNT(*) AS "Number of Common Courses"

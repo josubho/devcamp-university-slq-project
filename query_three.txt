@@ -1,6 +1,6 @@
 USE university_schema;
 
-SELECT COUNT(g.grades_course_id) AS "Number Courses Enrolled", g.grades_student_id as "ID", s.student_name AS "Student Name"
+SELECT COUNT(g.grades_course_id) AS "Number Courses Enrolled", s.student_name AS "Student Name"
 FROM grades g
 JOIN students s
 ON g.grades_student_id = s.student_id

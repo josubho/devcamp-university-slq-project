@@ -1,6 +1,6 @@
 USE university_schema;
 
-SELECT AVG(g.grades_values) AS "Average Grade", g.grades_course_id AS "Course ID", c.course_subject AS "Subject"
+SELECT AVG(g.grades_values) AS "Average Grade", c.course_subject AS "Subject"
 FROM grades g
 JOIN courses c
 ON g.grades_course_id = c.course_id
